@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+    
+{% block content %}
+  
+<div class="container">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-10">
+      <h2>Albums</h2>
+       <form action="" method="get">
+          {{ filter.form.as_p }}
+          <input type="submit" />
+        </form>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Artist</th>
+              <th scope="col">Album</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for album in filter.qs %}
+          <tr>
+            <td>{{ album.artist_name }}</td>
+            <td>{{ album.album_name }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+    </div>
+
+
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+

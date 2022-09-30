@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Albums</h2>
+    <ul>
+        {% for album in object_list %}
+            <li>{{ album.album_name }} {{ album.artist_name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
